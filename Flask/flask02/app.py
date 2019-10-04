@@ -8,9 +8,8 @@ def index():
 
 @app.route("/register", methods=["POST"])
 def register():
-    name = request.args.get("name")
-    dorm = request.args.get("dorm")
-
+    name = request.form.get("name")
+    dorm = request.form.get("dorm")
     if not name or not dorm:
         return "failure"
-    render_template("success.html")
+    return render_template("success.html")

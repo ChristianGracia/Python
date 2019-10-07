@@ -1,5 +1,9 @@
 from flask import Flask, render_template, request
 
+
+# list init
+students = []
+
 app = Flask(__name__)
 @app.route("/")
 def index():
@@ -12,4 +16,7 @@ def register():
     dorm = request.form.get("dorm")
     if not name or not dorm:
         return "failure"
+    students.append(f"{name} from {dorm}")
+    for x in students:
+        print(x)
     return render_template("success.html")

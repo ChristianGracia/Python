@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request. redirect
+from flask import Flask, render_template, request, redirect
 
 
 # list init
@@ -12,7 +12,7 @@ def index():
 
 @app.route("/registrants")
 def registrants():
-    return render_template("registrants.html", students=students)
+    return render_template("registered.html", students=students)
 
 
 @app.route("/register", methods=["POST"])
